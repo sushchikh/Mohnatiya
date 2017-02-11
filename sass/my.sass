@@ -1,0 +1,399 @@
+@import "reset"
+
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans')
+
+$bgc: #FEDC7B
+$bgc_h: #F1D171
+$def_color: #333
+$title_color: #6B3A19
+
+=flex_center 
+    display: flex
+    justify-content: center
+    align-items: center
+
+
+=bg_center_cover
+    background-position: center center
+    background-size: cover
+    background-repeat: no-repeat
+
+
+body 
+    font-family: calibri, tahoma, sans-serif
+    font-size: 20px
+
+
+
+/*##     ## ########    ###    ########  ######## ########
+/*##     ## ##         ## ##   ##     ## ##       ##     ##
+/*##     ## ##        ##   ##  ##     ## ##       ##     ##
+/*######### ######   ##     ## ##     ## ######   ########
+/*##     ## ##       ######### ##     ## ##       ##   ##
+/*##     ## ##       ##     ## ##     ## ##       ##    ##
+/*##     ## ######## ##     ## ########  ######## ##     ##
+
+
+.header_container 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    height: auto
+    background-color: $bgc
+    border-bottom: 3px solid gray
+    // box-shadow: 0px 3px 8px rgba(gray, .5)
+
+    @media only screen and (max-width: 950px) 
+        justify-content: center
+    
+    @media only screen and (max-width: 950px) 
+        height: 150px
+    
+    @media only screen and (max-width: 500px) 
+        height: 100px
+    
+    @media only screen and (max-width: 400px) 
+        height: 75px
+    
+
+
+.header_shedlue 
+    max-width: 300px
+    margin-left: 100px
+    text-align: center
+
+    .header_sheldue_title 
+        font-weight: 600
+        color: $title_color
+        margin-bottom: -5px
+    
+
+    @media only screen and (max-width: 1200px) 
+        margin-left: 5px
+    
+
+    @media only screen and (max-width: 950px) 
+        display: none
+    
+
+
+.header_logo 
+    +flex_center
+    max-width: 600px
+    height: 140px
+    width: 100%
+    background-image: url(../img/header/logo.svg)
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center center
+
+
+
+.header_contacts 
+    margin-right: 100px
+    text-align: center
+    color: $title_color
+
+    p 
+        font-weight: 600
+    
+
+    @media only screen and (max-width: 1200px) 
+        margin-right: 5px
+    
+
+    @media only screen and (max-width: 950px) 
+        display: none
+        height: auto
+    
+
+
+.mobile_header
+    display: none
+    @media only screen and (max-width: 950px) 
+        height: auto
+        display: block
+        margin: 10px auto 10px
+    
+
+.mobile_contacts, .mobile_shedlue
+    display: block
+    width: 100%
+    text-align: center
+    font-size: 25px
+    @media only screen and (max-width: 500px) 
+        font-size: 20px
+    
+    @media only screen and (max-width: 400px) 
+        font-size: 15px
+    
+    @media only screen and (max-width: 350px) 
+        font-size: 14px
+    
+
+.mobile_contacts, .mobile_shedlue_title
+    color: $title_color
+
+
+
+/*##    ##    ###    ##     ##
+/*###   ##   ## ##   ##     ##
+/*####  ##  ##   ##  ##     ##
+/*## ## ## ##     ## ##     ##
+/*##  #### #########  ##   ##
+/*##   ### ##     ##   ## ##
+/*##    ## ##     ##    ###
+
+
+.nav_container
+    width: auto
+    height: 160px
+    margin: 0px auto 30px 
+    position: relative
+    background-color: #fff
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    a
+        text-decoration: none
+    
+    z-index: 1000
+    overflow: hidden
+    @media only screen and (max-width: 950px) 
+        height: 60px
+        margin: 0 auto 20px
+    
+    @media only screen and (max-width: 500px) 
+        height: 30px
+        margin: 0 auto 20px
+        
+
+
+.nav_pets, .nav_price, .nav_contacts
+    text-align: center
+    height: 50px
+    line-height: 50px
+    width: 300px
+    background-color: $bgc
+    margin: 0 5px
+    font-size: 30px
+    font-weight: 600
+    color: $title_color
+    text-transform: uppercase
+    cursor: pointer
+    position: relative
+    &:hover
+        background-color: $bgc_h
+    
+    @media only screen and (max-width: 950px) 
+        width: 200px
+    
+    @media only screen and (max-width: 640px) 
+        width: auto
+        height: auto
+        padding: 0 15px
+    
+    @media only screen and (max-width: 500px) 
+        font-size: 15px
+        height: 30px
+        line-height: 30px
+        margin: 0 2px
+        
+    @media only screen and (max-width: 290px) 
+        font-size: 10px
+        height: 20px
+        line-height: 20px
+        margin: 0 2px
+          
+
+.nav_pets
+    border-radius: 10px 0 0 10px
+
+.nav_contacts
+    border-radius: 0 10px 10px 0    
+
+.nav_pets_img, .nav_price_img, .nav_contacts_img
+    z-index: -10
+    transition: transform .3s ease
+
+
+.nav_motion_pos1
+    left: 100px
+    top: -27px
+    position: absolute
+    height: 100px
+    width: 100px
+    @media only screen and (max-width: 950px) 
+        left: 50px
+    
+
+.nav_motion_pos_2
+    transform: translateY(-75px)
+
+
+.nav_pets_img
+    @extend .nav_motion_pos1
+    +bg_center_cover
+    background-image: url(../img/nav/pets.svg)
+    @media only screen and (max-width: 950px) 
+        display: none
+    
+
+.nav_pets:hover .nav_pets_img
+    @extend .nav_motion_pos_2
+
+
+.nav_price_img
+    @extend .nav_motion_pos1
+    +bg_center_cover
+    background-image: url(../img/nav/price.svg)
+    @media only screen and (max-width: 950px) 
+        display: none
+    
+
+.nav_price:hover .nav_price_img
+    @extend .nav_motion_pos_2
+
+
+.nav_contacts_img
+    @extend .nav_motion_pos1
+    +bg_center_cover
+    background-image: url(../img/nav/contacts.svg)
+    @media only screen and (max-width: 950px) 
+        display: none
+    
+
+.nav_contacts:hover .nav_contacts_img
+    @extend .nav_motion_pos_2
+
+
+/*
+/* ######     ###    ########             ##
+/*##    ##   ## ##   ##     ##          ####
+/*##        ##   ##  ##     ##            ##
+/*##       ##     ## ########             ##
+/*##       ######### ##   ##              ##
+/*##    ## ##     ## ##    ##             ##
+/* ######  ##     ## ##     ## #######  ######
+
+
+.top_carousel_container
+    width: 920px
+    height: auto
+    margin: 70px auto 0
+    border-radius: 10px
+    background-image: url(../img/top_carousel/1.jpg)
+    background-size: 57%
+    background-repeat: no-repeat
+    background-position: right center
+    @media only screen and (max-width: 950px) 
+        display: none
+    
+
+
+
+
+
+.top_carousel_text
+    +flex_center
+    flex-direction: column
+    border-radius: 10px 0 0 10px
+    background-color: $bgc
+    padding: 50px
+    padding-right: 250px
+    width: 640px
+    height: 300px
+    text-align: center
+    background: linear-gradient(65deg, $bgc 70%, transparent 70.1%)
+    span
+        font-weight: 600
+        color: $title_color
+    
+    @media only screen and (max-width: 950px) 
+        display: none
+    
+
+
+.top_carousel_hiden
+    display: none
+    width: 95vw
+    height: auto
+    background-color: $bgc
+    border-radius: 10px
+    margin: 0 auto
+    position: relative
+    @media only screen and (max-width: 950px) 
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+    
+
+.top_carousel_hiden_text
+    height: 100px
+    width: 100%
+    text-align: center
+    +flex_center
+    flex-direction: column
+    span
+        font-weight: 600
+        color: $title_color        
+    
+    @media only screen and (max-width: 950px) 
+        height: auto
+    
+    @media only screen and (max-width: 500px) 
+        font-size: 15px
+        
+
+.top_carousel_hiden_img
+    height: 400px
+    width: 100%
+    // background-image: url(../img/top_carousel/1.jpg)
+    // background-size: cover
+    // background-repeat: no-repeat
+    // background-position: center center
+    border-radius: 0 0 10px 10px
+    overflow: hidden
+
+    @media only screen and (max-width: 500px) 
+        height: 300px
+         
+
+
+.img_1, .img_2, .img_3
+    height: 100%
+    width: 100%
+    border-radius: 0 0 10px 10px
+    z-index: 100
+    position: absolute
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+
+
+.img_1
+    background-image: url(../img/top_carousel/1.jpg)
+    animation: carousel 15s 5sinfinite
+
+.img_2
+    background-image: url(../img/top_carousel/2.jpg)
+    animation: carousel 15s 15s infinite
+
+.img_3
+    background-image: url(../img/top_carousel/3.jpg)
+    animation: carousel 15s 15s infinite
+
+
+@keyframes carousel
+    0%
+        opacity: 0
+    
+    50%
+        opacity: 1
+    
+    100%
+        opacity: 0
+
+    
