@@ -84,7 +84,7 @@ body
     max-width: 600px
     height: 140px
     width: 100%
-    background-image: url(../img/header/logo.svg)
+    background-image: url(../img/header/logo_2.svg)
     background-size: contain
     background-repeat: no-repeat
     background-position: center center
@@ -237,6 +237,7 @@ body
     @extend .nav_motion_pos1
     +bg_center_cover
     background-image: url(../img/nav/pets.svg)
+    background-size: 93%
     @media only screen and (max-width: 950px) 
         display: none
     
@@ -354,9 +355,10 @@ body
     border-radius: 0 0 10px 10px
     overflow: hidden
 
+    @media only screen and (max-width: 950px) 
+        height: 280px
     @media only screen and (max-width: 500px) 
-        height: 300px
-         
+        height: 280px         
 
 
 .img_1, .img_2, .img_3
@@ -405,7 +407,7 @@ body
 /*##     ## ########     ###    ##     ## ##    ##    ##    ##     ##  ######   ########  ######
 
 .advantages_container
-    width: 920px
+    width: 1000px
     height: auto
     margin: 30px auto
     display: flex
@@ -418,10 +420,13 @@ body
     .advantages_element
         +flex_center
         background-color: $bgc
-        min-width: 200px
-        min-height: 200px
+        min-width: 215px
+        min-height: 215px
         border-radius: 10px
         margin: 10px
+        @media only screen and (max-width: 950px) 
+            min-width: 115px
+            min-height: 115px
 
 
 //########  ######## ########  ######          ######## #### ######## ##       ########
@@ -435,7 +440,7 @@ body
 
 .pets_title
     width: 920px
-    margin: 30px auto
+    margin: 30px auto 15px
     background-color: $bgc
     font-size: 30px   
     line-height: 30px
@@ -459,11 +464,28 @@ body
 .bottom_carousel_container
     width: 920px
     background-color: $bgc
-    height: 600px
+    height: auto
     margin: 0 auto
     border-radius: 10px
+    overflow: hidden
     @media only screen and (max-width: 950px) 
         width: 100%
+.carousel-caption
+    h1
+        font-size: 35px
+        @media only screen and (max-width: 950px) 
+            font-size: 25px
+.item
+    overflow: hidden
+    border-radius: 10px
+.left,
+.right   
+    border-radius: 10px
+
+.carusel_text
+    @media only screen and (max-width: 950px) 
+        display: none
+
 
 //########  ########  ####  ######  ########
 //##     ## ##     ##  ##  ##    ## ##
@@ -480,13 +502,15 @@ body
 .price_container
     +flex_center
     flex-wrap: wrap
-
+    @media only screen and (max-width: 950px)
+        margin: -10px 10px
     .price_element
         margin: 0 10px
-        height: 200px
-        min-width: 400px
-        @media only screen and (max-width: 950px) 
-            width: c
+        height: 100%
+        min-width: 450px
+        @media only screen and (max-width: 950px)
+            margin-top: 10px
+            min-width: 300px
         background-position: right center
         background-size: cover
         background-repeat: no-repeat
@@ -498,10 +522,10 @@ body
             padding-right: 80px
             background: linear-gradient(65deg, $bgc 70%, transparent 70.1%)
             height: 100%
-            width: 230px
-            @media only screen and (max-width: 950px) 
-                padding-right: 10px
-                width: 200px
+            width: 240px
+            @media only screen and (max-width: 950px)
+                width: 190px
+                font-size: 20px
             .price_element_text_title
                 color: $title_color
                 font-weight: 600
@@ -546,6 +570,22 @@ body
         width: 500px
         padding-top: 70px
         font-size: 25px
+        @media only screen and (max-width: 950px) 
+            display: none
+
+.contacts_container_hide
+    display: none
+    @media only screen and (max-width: 950px) 
+        +flex_center
+
+.map_container
+    height: 350px
+    @media only screen and (max-width: 950px) 
+        height: 200px
+    @media only screen and (max-width: 500px)         
+        height: 200px
+
+
 
 //   ###    ########  ########  ########  ######   ######
 //  ## ##   ##     ## ##     ## ##       ##    ## ##    ##
@@ -555,16 +595,30 @@ body
 //##     ## ##     ## ##    ##  ##       ##    ## ##    ##
 //##     ## ########  ##     ## ########  ######   ######   
 
-.adress_img, 
 .adress
-    display: inline-block
-
-
-.adress
-    padding-right: 170px
+    padding-right: 180px
+    position: relative
     display: flex
-    justify-content: flex-start
-    align-items: flex-start
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    @media only screen and (max-width: 950px)
+        padding-right: 0  
+.padding_r
+    margin-left: 15px
+
+.phone
+    &:before
+        display: block
+        position: absolute
+        left: 87px
+        top: 76px
+        content: ""
+        height: 20px
+        width: 20px
+        background-image: url("../img/phone.png")
+        @media only screen and (max-width: 950px)
+            display: none
 
 //########  #######   #######  ######## ######## ########
 //##       ##     ## ##     ##    ##    ##       ##     ##
@@ -574,3 +628,6 @@ body
 //##       ##     ## ##     ##    ##    ##       ##    ##
 //##        #######   #######     ##    ######## ##     ## 
 
+.footer
+    width: 200px
+    margin: 0 auto
