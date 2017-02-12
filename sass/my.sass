@@ -22,6 +22,7 @@ $title_color: #6B3A19
 body 
     font-family: calibri, tahoma, sans-serif
     font-size: 20px
+    padding-bottom: 70px
 
 
 
@@ -290,11 +291,6 @@ body
     @media only screen and (max-width: 950px) 
         display: none
     
-
-
-
-
-
 .top_carousel_text
     +flex_center
     flex-direction: column
@@ -319,6 +315,7 @@ body
     display: none
     width: 95vw
     height: auto
+    overflow: hidden
     background-color: $bgc
     border-radius: 10px
     margin: 0 auto
@@ -348,7 +345,7 @@ body
         
 
 .top_carousel_hiden_img
-    height: 400px
+    height: auto
     width: 100%
     // background-image: url(../img/top_carousel/1.jpg)
     // background-size: cover
@@ -363,12 +360,12 @@ body
 
 
 .img_1, .img_2, .img_3
-    height: 100%
+    height: 270px
     width: 100%
     border-radius: 0 0 10px 10px
     z-index: 100
     position: absolute
-    background-size: cover
+    background-size: contain
     background-repeat: no-repeat
     background-position: center center
 
@@ -396,4 +393,184 @@ body
     100%
         opacity: 0
 
-    
+
+
+
+/*   ###    ########  ##     ##    ###    ##    ## ########    ###     ######   ########  ######
+/*  ## ##   ##     ## ##     ##   ## ##   ###   ##    ##      ## ##   ##    ##  ##       ##    ##
+/* ##   ##  ##     ## ##     ##  ##   ##  ####  ##    ##     ##   ##  ##        ##       ##
+/*##     ## ##     ## ##     ## ##     ## ## ## ##    ##    ##     ## ##   #### ######    ######
+/*######### ##     ##  ##   ##  ######### ##  ####    ##    ######### ##    ##  ##             ##
+/*##     ## ##     ##   ## ##   ##     ## ##   ###    ##    ##     ## ##    ##  ##       ##    ##
+/*##     ## ########     ###    ##     ## ##    ##    ##    ##     ##  ######   ########  ######
+
+.advantages_container
+    width: 920px
+    height: auto
+    margin: 30px auto
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    @media only screen and (max-width: 950px) 
+        width: 100%
+
+    .advantages_element
+        +flex_center
+        background-color: $bgc
+        min-width: 200px
+        min-height: 200px
+        border-radius: 10px
+        margin: 10px
+
+
+//########  ######## ########  ######          ######## #### ######## ##       ########
+//##     ## ##          ##    ##    ##            ##     ##     ##    ##       ##
+//##     ## ##          ##    ##                  ##     ##     ##    ##       ##
+//########  ######      ##     ######             ##     ##     ##    ##       ######
+//##        ##          ##          ##            ##     ##     ##    ##       ##
+//##        ##          ##    ##    ##            ##     ##     ##    ##       ##
+//##        ########    ##     ######  #######    ##    ####    ##    ######## ########
+
+
+.pets_title
+    width: 920px
+    margin: 30px auto
+    background-color: $bgc
+    font-size: 30px   
+    line-height: 30px
+    text-align: center
+    padding: 10px
+    color: $title_color
+    font-weight: 900
+    border-radius: 10px  
+    text-transform: uppercase
+    @media only screen and (max-width: 950px) 
+        width: 100%
+
+// ######     ###    ########           #######
+//##    ##   ## ##   ##     ##         ##     ##
+//##        ##   ##  ##     ##                ##
+//##       ##     ## ########           #######
+//##       ######### ##   ##           ##
+//##    ## ##     ## ##    ##          ##
+// ######  ##     ## ##     ## ####### #########
+
+.bottom_carousel_container
+    width: 920px
+    background-color: $bgc
+    height: 600px
+    margin: 0 auto
+    border-radius: 10px
+    @media only screen and (max-width: 950px) 
+        width: 100%
+
+//########  ########  ####  ######  ########
+//##     ## ##     ##  ##  ##    ## ##
+//##     ## ##     ##  ##  ##       ##
+//########  ########   ##  ##       ######
+//##        ##   ##    ##  ##       ##
+//##        ##    ##   ##  ##    ## ##
+//##        ##     ## ####  ######  ########       
+
+.price_title
+    @extend .pets_title
+
+
+.price_container
+    +flex_center
+    flex-wrap: wrap
+
+    .price_element
+        margin: 0 10px
+        height: 200px
+        min-width: 400px
+        @media only screen and (max-width: 950px) 
+            width: c
+        background-position: right center
+        background-size: cover
+        background-repeat: no-repeat
+        border-radius: 10px
+        .price_element_text
+            border-radius: 10px 0 0 10px
+            font-size: 30px
+            padding: 45px 20px 
+            padding-right: 80px
+            background: linear-gradient(65deg, $bgc 70%, transparent 70.1%)
+            height: 100%
+            width: 230px
+            @media only screen and (max-width: 950px) 
+                padding-right: 10px
+                width: 200px
+            .price_element_text_title
+                color: $title_color
+                font-weight: 600
+
+        .price_element_img
+            position: absolute
+
+    .price_img_1
+        background-image: url('../img/top_carousel/1.jpg')        
+    .price_img_2
+        background-image: url('../img/top_carousel/2.jpg')        
+
+
+// ######   #######  ##     ## ########
+//##    ## ##     ## ###   ### ##
+//##       ##     ## #### #### ##
+//##       ##     ## ## ### ## ######
+//##       ##     ## ##     ## ##
+//##    ## ##     ## ##     ## ##
+// ######   #######  ##     ## ########
+
+.come_title
+    @extend .pets_title
+
+
+
+.contacts_cotainer
+    position: relative
+    margin: 0 auto
+    border-radius: 10px
+    overflow: hidden
+    width: 920px  
+    @media only screen and (max-width: 950px) 
+        width: 100% 
+    .contact_text_container
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 100
+        background: linear-gradient(65deg, $bgc 70%, transparent 70.1%)
+        height: 350px
+        width: 500px
+        padding-top: 70px
+        font-size: 25px
+
+//   ###    ########  ########  ########  ######   ######
+//  ## ##   ##     ## ##     ## ##       ##    ## ##    ##
+// ##   ##  ##     ## ##     ## ##       ##       ##
+//##     ## ##     ## ########  ######    ######   ######
+//######### ##     ## ##   ##   ##             ##       ##
+//##     ## ##     ## ##    ##  ##       ##    ## ##    ##
+//##     ## ########  ##     ## ########  ######   ######   
+
+.adress_img, 
+.adress
+    display: inline-block
+
+
+.adress
+    padding-right: 170px
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+
+//########  #######   #######  ######## ######## ########
+//##       ##     ## ##     ##    ##    ##       ##     ##
+//##       ##     ## ##     ##    ##    ##       ##     ##
+//######   ##     ## ##     ##    ##    ######   ########
+//##       ##     ## ##     ##    ##    ##       ##   ##
+//##       ##     ## ##     ##    ##    ##       ##    ##
+//##        #######   #######     ##    ######## ##     ## 
+
